@@ -1,6 +1,7 @@
-# Compressing Public Keys for Free for UOV and its Variants
+# Compressing UOV/MAYO Public Keys for Free
 
-Implementations and benchmark scripts for the paper. Paper: TBA
+Implementations and benchmark scripts for the paper *Compressing UOV/MAYO Public Keys for
+Free* by Ward Beullens (2026).
 
 In UOV and MAYO the public map is (P1, P2, P3), where P1 and P2 are expanded from a public
 seed and P3 is computed from them and the secret oil space O. Here key generation chooses
