@@ -1,0 +1,9 @@
+build*/
+*.o
+.vscode/
+compressed_uov/**/*.req
+compressed_uov/**/*.rsp
+compressed_uov/**/KAT/
+compressed_uov/**/sign_api-test
+compressed_uov/**/seeded_p3-test
+compressed_uov/**/PQCgenKAT_sign
