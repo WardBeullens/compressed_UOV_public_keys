@@ -1,5 +1,5 @@
 #!/bin/bash
-# Core cycle counts for Table 2: standard and seeded-P3 key generation, AVX2 MAYO.
+# Core cycle counts for Table 2: standard and seeded-P3 key generation, AVX2+GFNI MAYO.
 #
 # mayo_bench reads the TSC, which ticks at a fixed rate whatever the core clock does
 # (turbo, power limits, battery). Every run is therefore bracketed by tsc_per_cycle,
@@ -7,11 +7,11 @@
 # two; runs during which the clock moved by more than 2% are dropped.
 #
 # usage: bench/bench_cycles.sh [core] [raw-output-file] [build-type]
-#        (builds HEAD into a temporary directory; build type avx2 by default)
+#        (builds HEAD into a temporary directory; build type avx2_gfni by default)
 set -euo pipefail
 core=${1:-4}
 raw=${2:-}
-btype=${3:-avx2}
+btype=${3:-avx2_gfni}
 here=$(cd "$(dirname "$0")" && pwd)
 repo=$(git -C "$here" rev-parse --show-toplevel)
 work=$(mktemp -d)

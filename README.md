@@ -54,11 +54,11 @@ Pass extra defines through `CC` (e.g. `make "CC=gcc -D_OV_NO_SEEDED_P3" PROJ=Ip_
 
 ## Reproducing the benchmarks
 
-    bench/bench_cycles.sh 4 mayo_raw.txt avx2_gfni   # MAYO, AVX2+GFNI
+    bench/bench_cycles.sh 4 mayo_raw.txt             # MAYO, AVX2+GFNI
     bench/bench_uov.sh 4 uov_raw.txt                  # UOV, AVX2, pkc variants
 
 Arguments: core to pin to (default 4), optional file for the raw per-run results, and for
-MAYO the build type (default `avx2`). Each script builds the committed `HEAD` twice in a
+MAYO the build type (default `avx2_gfni`). Each script builds the committed `HEAD` twice in a
 temporary directory (standard and modified key generation), runs the benchmarks pinned to
 the core with `taskset`, and prints median core cycles for KeyGen, Sign and Verify. Since the
 benchmarks read the TSC, every run is bracketed by `tsc_per_cycle`, which measures TSC ticks
